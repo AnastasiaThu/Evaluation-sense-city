@@ -1,0 +1,142 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  /* width: 100%; */
+}
+.example-input-wrapper {
+    margin-bottom: 16px;
+}
+
+.info-card{
+  background-color: white;
+box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .1), 0 4px 25px 0 rgba(0, 0, 0, .08), 0 8px 10px -5px rgba(0, 0, 0, .12);
+padding:10px
+
+}
+  
+.bs-stepper{
+  height: 100%; 
+  width: 100%;
+  /* background-color: aquamarine; */
+}
+.step-content{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  min-width: 700px;
+  min-height: 100px;
+  max-width: 700px;
+  /* background-color: blue; */
+  height: 100%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.submit{
+  flex-grow: 4;
+}
+
+/* h2{
+  text-align: center;
+} */
+
+mat-progress-bar {
+  height: 20px; 
+  margin-bottom: 10px; 
+}
+
+
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-bottom: 0.3rem; 
+  margin-left: 0.2rem;
+}
+
+
+.side-text{
+  margin-top: 2%;
+}
+
+
+#otherInput {
+  width: 100%; 
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+#otherInput:focus {
+  outline: none;
+  border-color: dodgerblue; 
+}
+    
+
+.step-buttons {
+  display: flex;
+  text-align:center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+
+  min-width: 700px;
+  /* background-color: blueviolet; */
+}
+
+.right-buttons{
+  display: flex;
+  flex-direction: row;
+}
+button{
+  /* background-color: aquamarine; */
+  margin-right: 5px;
+}
+.no-previous {
+  justify-content: flex-end !important; 
+}
+
+
+@media only screen and (  max-width: 700px){
+  .step-content{
+    min-width: unset;    
+    max-width: unset;
+    width: 100%;
+
+    /* min-height: unset;
+    height: 100%; */
+  }
+  .step-buttons {
+    min-width: unset;
+    width: 100%;
+  }
+  .rowWidth100{
+    width:100%; 
+    
+    }
+  /* .colHeight{
+    min-height: unset;
+    height: 100%;
+  }
+  
+  .bs-stepper{
+    height: 100%;
+  } */
+}
+

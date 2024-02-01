@@ -1,0 +1,86 @@
+
+<div class="container">
+
+  <app-logo></app-logo>
+
+  <div class="row rowWidth100">
+    <div class="col-md-12 colHeight">
+
+      <mat-card class="info-card">
+      <div id="stepper" class=" bs-stepper">
+        <div class="col-md-12">
+          <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>         
+
+          <!-- Using components & dynamic values from db -->
+          <form [formGroup]="myForm">
+            <div *ngFor="let question of questions;index as i">
+            
+              
+              <app-score-div *ngIf="question.type==='scoring' && stepperDiv===i+1 && !showMessage && !submitMessage"               
+                [question]="question.description" 
+                [scoreOptions]="question.scoreOptions" 
+                [order]="question.order" 
+                (nextButtonEnabled)="enableNextButton($event)">
+              </app-score-div>
+
+
+              <app-text-div *ngIf="question.type==='text' && stepperDiv===i+1 && !showMessage && !submitMessage"
+                [question]="question.description" 
+                [options]="question.options"
+                [order]="question.order"
+                (nextButtonEnabled)="enableNextButton($event)"
+              ></app-text-div>
+
+              <app-date-div *ngIf="question.type==='date' && stepperDiv===i+1 && !showMessage && !submitMessage"
+                [question]="question.description" 
+                [order]="question.order" 
+                (yearSelected)="chosenYearHandler($event)"
+              ></app-date-div>
+                
+
+              <div *ngIf="stepperDiv===endOfRequired-1 && showMessage && stepperDiv===i+1">
+                <div class="step-content" data-target="#step5">  
+                    <div class="flex-container">  
+                      <h2> Οι ερωτήσεις που ακολουθούν είναι προαιρετικές με σκοπό τη συλλογή στατιστικών δεδομένων. Θα μας βοηθούσε αν αφιερώνατε λίγο χρόνο για την συμπλήρωσή τους. Διαφορετικά μπορείτε να μεταβείτε στο τέλος της φόρμας επιλέγοντας παράλειψη. </h2>
+                    </div>
+                </div>
+              </div>
+
+              <div *ngIf="stepperDiv===endOfQuestions - 1 && stepperDiv===i+1 && submitMessage">
+                <div class="step-content" data-target="#step9">  
+                    <div class="flex-container submit">  
+                      <h2>Είστε σίγουρος ότι θέλετε να προχωρήσετε σε υποβολή των απαντήσεων;</h2>
+                    </div>
+                </div>
+              </div>
+
+            </div>            
+          </form>        
+
+          <div [ngClass]="{'step-buttons': true, 'justify-content-between': stepperDiv !== 1, 'no-previous': stepperDiv === 1}">
+            <div *ngIf="stepperDiv !== 1">
+              <button mat-raised-button type="button" (click)="goToPrevious()">Προηγούμενο</button>
+            </div>
+          
+            <div class="right-buttons">
+              <div *ngIf="stepperDiv !== endOfQuestions && !submitMessage">
+                <button mat-raised-button type="button" (click)="goToNext()" [disabled]="!isNextButtonEnabled && notOptional()">Επόμενο</button>
+              </div>
+              <div *ngIf="stepperDiv === endOfRequired-1 && showMessage ">
+                <button mat-raised-button type="button" (click)="goToEnd()">Παράλειψη</button>
+              </div>
+              <div *ngIf="stepperDiv === endOfQuestions-1 && submitMessage">
+                <button mat-raised-button type="button" (click)="submitForm()">Υποβολή</button>
+              </div>
+            </div>
+          </div>       
+
+
+        </div>        
+      </div>
+    </mat-card>
+      
+
+    </div>
+  </div>
+</div>

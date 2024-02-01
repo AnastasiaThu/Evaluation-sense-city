@@ -1,0 +1,82 @@
+<router-outlet></router-outlet>
+
+<div class="container">
+  <mat-toolbar class="nav-header">
+    <app-logo></app-logo>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <div class="row mt-4">
+
+    <div class="col-md-3 sidebar">
+      <mat-sidenav mode="side" opened>
+        <h2>{{ city.name }}</h2>
+        <div class="comp-list-border"></div>
+
+        <!-- <nav>
+          <ul>
+            <li *ngFor="let department of city.departments">
+              <a [routerLink]="['/department', city.name, department.name]">{{ department.name }}</a>
+            </li>
+          </ul>
+        </nav> -->
+
+        <mat-nav-list class="mat-nav-list" role="navigation" *ngFor="let department of city.departments">
+                    
+          <a class="mat-list-item ng-star-inserted active" mat-list-item="" [routerLink]="['/department', city.name, department.name]">
+              <div class="mat-list-itemm-content">
+                  <div class="mat-list-item-ripple mat-ripple" ></div>
+                  {{ department.name }}
+              </div>
+          </a>
+      </mat-nav-list>
+
+      </mat-sidenav>
+    </div>
+
+    <div class="col-md-9">
+      <div class="chart-container">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <mat-card class="info-card">
+              <mat-card-header>
+                <mat-card-title>{{ cityScore }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="lead">Σκορ Πόλης</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <mat-card class="info-card">
+              <mat-card-header>
+                <mat-card-title>{{ city.evaluationsCount }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="lead">Αριθμός αξιολογήσεων </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+        <hr>
+
+        <app-bar-chart class="text-center mt-4 charts" [colorScheme]="scoresColorScheme" [results]="departmentsData"></app-bar-chart>
+      
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="genderData"></app-pie-chart>
+          <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="ageGroupData"></app-pie-chart>
+        </div>
+
+        <div class="col-md-6">
+          <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="educationLevelData"></app-pie-chart>
+          <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="contactData"></app-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

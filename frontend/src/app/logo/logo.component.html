@@ -1,0 +1,45 @@
+<mat-toolbar class="header mat-toolbar mat-toolbar-single" role="banner">
+  <div class="logo">
+    <a [routerLink]="logoRouterLink()">
+      <div class="logo-container">
+        <img src="firm-logo.png" alt="Firm Logo" class="img-fluid">
+      </div>
+    </a>
+  </div>
+</mat-toolbar>
+
+  <!-- <a [routerLink]="logoRouterLink()">
+    <div class="logo-container">
+      <img src="firm-logo.png" alt="Firm Logo" class="img-fluid">
+    </div>
+  </a> -->
+
+
+<mat-toolbar class="header mat-toolbar mat-toolbar-single" role="banner">
+  <div class="logo">
+    <a [routerLink]="logoRouterLink()" class="logo-link">
+      <div class="logo-container">
+        <!-- <img src="firm-logo.png" alt="Firm Logo" class="img-fluid"> -->
+        <h3 style="margin-bottom:0">
+          <i class="ion-ios-analytics-outline" style="margin-right: 5px; top:1px; position:relative;"></i>
+          <!-- <ion-icon name="analytics-outline" style="margin-right: 5px; top: 1px; position: relative;"></ion-icon> -->
+
+          <span>sense.city</span>
+      </h3>
+      </div>
+    </a>
+  </div>
+</mat-toolbar>
+
+<!-- <div class="mat-elevation-z1 navbar">
+  <nav class="docs-navbar-header">
+    <a class="docs-navbar-logo" [routerLink]="logoRouterLink()" class="logo-link">
+      <h3 style="margin-bottom:0">
+          <i class="ion-ios-analytics-outline" style="margin-right: 5px; top:1px; position:relative;"></i>
+          <span>sense.city</span>
+      </h3>
+    </a>
+  </nav>
+</div> -->
+
+

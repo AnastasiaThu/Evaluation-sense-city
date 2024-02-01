@@ -1,0 +1,20 @@
+<div>
+  <!-- <mat-label>Χρονική Περίοδος</mat-label> -->
+  <h3>Χρονική Περίοδος</h3>
+</div>
+
+
+<mat-form-field>
+  <mat-label>Από</mat-label>
+  <input matInput [matDatepicker]="fromPicker" placeholder=" " [max]="today" (dateChange)="updateStartDate($event)">
+  <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+  <mat-datepicker #fromPicker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Έως</mat-label>
+  <input matInput [matDatepicker]="toPicker" placeholder="Σήμερα " [max]="today" (dateChange)="updateEndDate($event)">
+  <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+  <mat-datepicker #toPicker></mat-datepicker>
+</mat-form-field>
+

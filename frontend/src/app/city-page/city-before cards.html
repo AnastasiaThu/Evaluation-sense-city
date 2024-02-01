@@ -1,0 +1,64 @@
+<!-- display before cards display -->
+
+<!-- <router-outlet></router-outlet>
+
+<div class="container">
+  <app-logo></app-logo>
+  <div class="row mt-4">
+    <div class="col-md-12">
+
+      <div *ngIf="city" class="chart-container">
+        <h1 class="mt-4">{{ city.name }}</h1>
+        <p class="lead">City Score: {{ cityScore }}</p>
+        <p> Αριθμός αξιολογήσεων: {{city.evaluationsCount}} </p>
+      
+        <nav class="navbar ">
+          <ul class="navbar-nav group-list">
+            <li class="nav-item group-list-item" *ngFor="let department of city.departments">
+              <a class="nav-link" [routerLink]="['/department', city.name, department.name]">{{ department.name }}</a>
+            </li>
+          </ul>
+        </nav>
+      
+        <app-bar-chart
+          [colorScheme]="scoresColorScheme"
+          [results]="departmentsData"
+        ></app-bar-chart>
+
+        
+        
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <app-pie-chart
+              [colorScheme]="demographicsColorScheme"
+              [results]="genderData"
+            ></app-pie-chart>   
+
+            <app-pie-chart
+              [colorScheme]="demographicsColorScheme"
+              [results]="ageGroupData"
+            ></app-pie-chart>
+
+          </div>
+      
+          <div class="col-md-6">
+            <app-pie-chart
+              [colorScheme]="demographicsColorScheme"
+              [results]="educationLevelData"
+            ></app-pie-chart>
+
+            <app-pie-chart
+              [colorScheme]="demographicsColorScheme"
+              [results]="contactData"
+            ></app-pie-chart>
+          </div> 
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+  
+</div>
+ -->

@@ -1,0 +1,202 @@
+<div class='wrapper'>
+
+    <!-- header -->
+    <div class="mat-elevation-z1 navbar">
+
+        <nav class="docs-navbar-header">
+            <!-- hide-menu-button -->
+            <button class="mat-icon-button" mat-icon-buton="">
+                <span class="mat-button-wrapper">
+                    <i class="material-icons">menu</i>
+                </span>
+                <div class="mat-button-ripple mat-ripple mat-button mat-button-ripple-round" matripple=""></div>
+                <div></div>
+
+            </button>            
+            <!-- ------- -->
+            <!-- logo -->
+            <a class="docs-navbar-logo" routerlink="/" href="/admin/analytics">
+                <h3 style="margin-bottom:0">
+                    <i class="ion-ios-analytics-outline" style="margin-right: 5px; top:1px; position:relative;">
+                    <!-- maybe mono tou -->
+                    <!-- ::before -->
+                    </i>
+                    <span>sense.city</span>
+                </h3>
+            </a>
+            <!-- <div>Translate page</div> -->
+            <!-- ----- -->
+        </nav>
+    </div>
+        <!-- ---- -->
+
+        <!-- main-content -->
+        <mat-sidenav-container class="sidenav-container mat-drawer-container mat-sidenav-container mat-drawer-transition">
+
+            <!-- drawer for sidebar slide -->
+            <div class="mat-drawer-backdrop ng-star-inserted"></div>
+            <div clas="cdk-visually-hidden cdk-focus-trap-anchor" tabinex="-1"></div>
+            <!-- -------- -->
+            <!-- sidebar -->
+            <mat-sidenav id="sidebar" class="mat-drawer mat-sidenav ng-tns-c6-1 ng-trigger ng-trigger-transform ng-star-inserted mat-drawer-side" fixedtopgap="56" tabindex="-1" style="transform: none; visibility: visible;">
+                <div class="text-center sidebar-municipality">patratest</div>
+                <div class="comp-list-border"></div>
+
+                <mat-nav-list class="mat-nav-list" role="navigation">
+                    
+                    <a class="mat-list-item ng-star-inserted active" mat-list-item="" routerlinkactive="active" href="/admin/analytics/usage">
+                        <div class="mat-list-itemm-content">
+                            <div class="mat-list-item-ripple mat-ripple" mat-ripple=""></div>
+                            <i class="material-icons ">icon_description</i>
+                            Στατιστικά Χρήσης
+                        </div>
+                    </a>
+                </mat-nav-list>
+
+            </mat-sidenav>
+            <!-- ------ -->
+
+            <!-- content next to the sidebar -->
+            <div clas="cdk-visually-hidden cdk-focus-trap-anchor" tabinex="-1"></div>
+            <mat-sidenav-content class="sidenav-content mat-drawer-content mat-sidenav-content" style="margin-left:250px;">
+                <!-- <router-outlet></router-outlet> -->
+                <!-- component with the main-content info -->
+                <app-platform-usage class="ng-star-inserted" >                    
+                    <div class="container-fluid">
+
+                        <!-- top cards -->
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="ss-chart-card mat-elevation-z2 copm-container-border-rad">
+                                    <!-- 3 Χρηστες και απο εως -->
+                                    <div class="comp-metrics-container">
+                                        <h1 class="mb-0" style="visibility: visible;">3</h1>
+                                        <div class="comp-metrics-subheader">Χρήστες</div>
+                                        <div class="comp-metrics-subheader-info">από την έναρξη της υπηρεσίας την date μέχρι σήμερα</div>
+                                    </div>
+                                    <!-- μινι διαγρ απο κατω απο που προηλθαν οι χρηστες -->
+                                    <div class="comp-metrics-chart">
+                                        <div class="comp-metrics-empty-bar" style="width:100%;"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-5"></div>
+                        </div>
+
+                        <!-- charts -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card ss-chart-card mat-elevation-z2">
+                                    <!-- header -->
+                                    <div class="card-header ss-card-header"> Συνολικά εκκρεμή προβλήματα
+                                        <div class="ss-card-subheader"> έως 11/01/2024 </div>
+                                    </div>
+                                    <!-- chart -->
+                                    <div class="card-body">
+                                        <div class="ss-chart-container comp-pie-container">
+                                            <ngx-charts-advanced-pie-chart class="custom-pie-chart-container ng-star-inserted">
+                                                <div style="width:926px; height:177px;">
+                                                    <!-- circle -->
+                                                    <div class="advanced-pie chart" style="width: 268px; height: 137px;">
+                                                        <ngx-charts-chart class="ng-tns-c12-83">
+                                                            <div class="ngx-charts-outer ng-trigger ng-trigger-animationState ng-animate-disabled" style="width: 926px;">
+                                                                <svg class="ngx-charts" width="926" height="177">
+                                                                    <g class="pie chart" transform="translate(134 , 88.5)">
+                                                                        <g ngx-charts-pie-series="">
+                                                                            <!---->
+                                                                            <g class="ng-star-inserted" style="">
+                                                                                <!---->
+                                                                                <g ngx-charts-pie-arc="" ngx-tooltip="">
+                                                                                    <g class="arc-group">
+                                                                                        <!---->
+                                                                                        <path class="arc" d="M3.3555322296637476e-15,-54.8L2.5166491722478104e-15,-41.099999999999994Z" fill="#a8385d" style="pointer-events: auto;"></path>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                            <g class="ng-star-inserted" style="">
+                                                                                <!---->
+                                                                                <g ngx-charts-pie-arc="" ngx-tooltip="">
+                                                                                    <g class="arc-group">
+                                                                                        <!---->
+                                                                                        <path class="arc" d="M3.3555322296637476e-15,-54.8A54.8,54.8,0,1,1,-3.3555322296637476e-15,54.8A54.8,54.8,0,1,1,3.3555322296637476e-15,-54.8M-7.54994751674343e-15,-41.099999999999994A41.099999999999994,41.099999999999994,0,1,0,7.54994751674343e-15,41.099999999999994A41.099999999999994,41.099999999999994,0,1,0,-7.54994751674343e-15,-41.099999999999994Z" fill="#7aa3e5" style="pointer-events: auto;"></path>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                                <!---->
+                                                                <!---->
+                                                            </div>
+                                                        </ngx-charts-chart>
+                                                    </div>
+                                                    <!-- data next to circle -->
+                                                    <div class="advanced-pie-legend-wrapper" style="width: 658px; height: 177px;">
+                                                        <ngx-charts-advanced-legend>
+                                                            <div class="advanced-pie-legend" style="width: 638px;">
+                                                                <!---->
+                                                                <!---->
+                                                                <div class="total-value ng-star-inserted"> 1 </div>
+                                                                <div class="total-label"> Εκκρεμή προβλήματα </div>
+                                                                <div class="legend-items-container">
+                                                                    <div class="legend-items">
+                                                                        <!---->
+                                                                        <div class="legend-item ng-star-inserted" tabindex="-1">
+                                                                            <div class="item-color" style="border-left-color: rgb(168, 56, 93);"></div>
+                                                                            <!---->
+                                                                            <!---->
+                                                                            <div class="item-value ng-star-inserted"> -1 </div>
+                                                                            <div class="item-label">Καθαριότητας</div>
+                                                                            <!---->
+                                                                            <!---->
+                                                                            <div class="item-percent ng-star-inserted"> -100% </div>
+                                                                        </div>
+                                                                        <div class="legend-item ng-star-inserted" tabindex="-1">
+                                                                            <div class="item-color" style="border-left-color: rgb(122, 163, 229);"></div>
+                                                                            <!---->
+                                                                            <!---->
+                                                                            <div class="item-value ng-star-inserted"> 2 </div>
+                                                                            <div class="item-label">Ηλεκτροφωτισμού</div>
+                                                                            <!---->
+                                                                            <!---->
+                                                                            <div class="item-percent ng-star-inserted"> 200% </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ngx-charts-advanced-legend>
+                                                    </div>
+                                                </div>
+                                            </ngx-charts-advanced-pie-chart>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"></div>
+                        <div class="row"></div>
+
+                    </div>                    
+                </app-platform-usage>
+
+            </mat-sidenav-content>
+            <!-- ----------- -->
+
+
+        </mat-sidenav-container>
+        <!-- ---------- -->
+
+    
+
+
+</div>
+
+
+
+
+

@@ -1,0 +1,101 @@
+
+<!-- Path: src/app/department-page/department-page.component.ts -->
+<div class="container">
+    <app-logo></app-logo>
+  
+    <div *ngIf="department">
+      <h1>{{ departmentName }}</h1>
+      <p>Total Department Score: {{ totalDepartmentScore }}</p>
+      <p> Αριθμός αξιολογήσεων: {{evaluationsCount}} </p>
+    </div>
+    <!-- Average scores -->
+    <div>
+      <h2>Σκορ ερωτήσεων</h2>
+      <ul>
+        <li *ngFor="let score of averageScores">
+          {{ score.question }}: {{ score.score }}
+        </li>
+      </ul>
+    </div>
+  
+    <div>
+      <app-datepicker (dateRangeSelected)="onDateRangeSelected($event)"></app-datepicker>
+      <button mat-raised-button color="primary" [disabled]="!checkDatesValidity()" (click)="filterData()">Αναζήτηση</button>
+      <button mat-raised-button color="warn" (click)="reset()">Επαναφορά</button>
+    </div>
+  
+    <hr>
+    <!-- <app-carousel class="carousel">
+      <ng-container *ngFor="let data of [genderData, ageGroupData, educationLevelData, contactData]">
+        <ng-container *appCarouselItem>
+          <app-pie-chart [colorScheme]="RestColorScheme" [results]="data"></app-pie-chart>
+        </ng-container>
+      </ng-container>
+    </app-carousel> -->
+     <!-- demographics -->
+  
+     <!-- <app-carousel [showControls]="true">
+      <ng-container *ngFor="let chartData of pieChartsData">
+        <mdb-carousel-item>
+          <app-pie-chart [colorScheme]="chartData.colorScheme" [results]="chartData.data"></app-pie-chart>
+        </mdb-carousel-item>
+      </ng-container>
+    </app-carousel> -->
+    <!-- https://stackblitz.com/edit/angular-carousel-example?fbclid=IwAR3ZDjWJil2Za1l1OMmVEpBpVPQC1k0-Wb6r_Oa45vu98fzapTQ-HG9AQvE&file=src%2Fapp%2Fapp.component.html -->
+  
+    <app-bar-chart
+      [colorScheme]="scoresColorScheme"
+      [results]="scoreData"
+    ></app-bar-chart>
+  
+    <!-- demographics -->
+    <!-- <ngb-carousel *ngIf="genderData && ageGroupData && educationLevelData && contactData">
+      <ng-template ngbSlide>
+        <app-pie-chart
+          [colorScheme]="genderColorScheme"
+          [results]="genderData"
+        ></app-pie-chart>
+      </ng-template>
+  
+      <ng-template ngbSlide>
+        <app-pie-chart
+          [colorScheme]="RestColorScheme"
+          [results]="ageGroupData"
+        ></app-pie-chart>
+      </ng-template>
+  
+      <ng-template ngbSlide>
+        <app-pie-chart
+          [colorScheme]="RestColorScheme"
+          [results]="educationLevelData"
+        ></app-pie-chart>
+      </ng-template>
+  
+      <ng-template ngbSlide>
+        <app-pie-chart
+          [colorScheme]="RestColorScheme"
+          [results]="contactData"
+        ></app-pie-chart>
+      </ng-template>
+    </ngb-carousel> -->
+    <app-pie-chart
+    [colorScheme]="demographicsColorScheme"
+    [results]="genderData"
+  ></app-pie-chart>
+  
+  <app-pie-chart
+    [colorScheme]="demographicsColorScheme"
+    [results]="ageGroupData">
+  </app-pie-chart>
+  
+  <app-pie-chart
+    [colorScheme]="demographicsColorScheme"
+    [results]="educationLevelData">
+  </app-pie-chart>
+  
+  <app-pie-chart
+    [colorScheme]="demographicsColorScheme"
+    [results]="contactData">
+  </app-pie-chart>
+  </div>
+  

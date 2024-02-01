@@ -1,0 +1,18 @@
+    <div class="step-content">
+        <h2>{{ question }}</h2>
+        <div class="flex-container">  
+            <div class="form-check form-check-inline" *ngFor="let option of options">
+            <div class="radio-wrapper">
+                <input
+                class="form-check-input"
+                type="radio"
+                [id]="option"
+                name="optionsGroup"
+                [value]="option"
+                (change)="enableNextButton(option)"
+                />
+                <label class="form-check-label" [for]="option">{{ option }}</label>
+            </div>
+            </div>
+        </div>
+    </div>

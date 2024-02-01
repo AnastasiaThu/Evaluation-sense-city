@@ -1,0 +1,108 @@
+<div class="container">
+  <!-- <mat-toolbar class="nav-header">
+    <app-logo></app-logo>
+  </mat-toolbar> -->
+  <mat-toolbar class="nav-header">
+    <app-logo></app-logo>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <div class="row mt-4">
+    <div class="col-md-3 sidebar">
+      <mat-sidenav mode="side" opened>
+        <h2>{{ departmentName }}</h2>
+        <div class="comp-list-border"></div>
+        
+      </mat-sidenav>
+    </div>
+
+    <div class="col-md-9">
+      <div class="chart-container">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <mat-card class="info-card">
+              <mat-card-header>
+                <mat-card-title>{{ totalDepartmentScore }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="lead">Σκορ Τμήματος</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <mat-card class="info-card">
+              <mat-card-header>
+                <mat-card-title>{{ evaluationsCount }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="lead" >Αριθμός Αξιολογήσεων</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="charts">
+          <div class="row">
+            <div class="text-center mt-4">
+              <!-- Date Range and Buttons -->
+              <div class="filter-date">
+                <app-datepicker (dateRangeSelected)="onDateRangeSelected($event)"></app-datepicker>
+                <button mat-raised-button color="primary" [disabled]="!checkDatesValidity()" (click)="filterData()">Αναζήτηση</button>
+                <button mat-raised-button color="warn" (click)="reset()">Επαναφορά</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="text-center mt-4">
+              <app-bar-chart [colorScheme]="scoresColorScheme" [results]="scoreData"></app-bar-chart>
+            </div>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row mt-4">
+          <div class="charts">
+            <!-- <div class="col-md-6"> -->
+              <div *ngIf="chart === 1" [@slideInOut]="chart">
+                <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="genderData"></app-pie-chart>
+              </div>
+  
+              <div *ngIf="chart === 2">
+                <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="ageGroupData"></app-pie-chart>
+              </div>
+            <!-- </div> -->
+  
+            <!-- <div class="col-md-6"> -->
+              <div *ngIf="chart === 3">
+                <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="educationLevelData"></app-pie-chart>
+              </div>
+  
+              <div *ngIf="chart === 4">
+                <app-pie-chart [colorScheme]="demographicsColorScheme" [results]="contactData"></app-pie-chart>
+              </div>
+            <!-- </div> -->
+          </div>
+
+          <div class="flex-buttons">
+            <button mat-icon-button type="button" (click)="goToPrevious()">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+          
+            <button mat-icon-button type="button" (click)="goToNext()">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
+
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>

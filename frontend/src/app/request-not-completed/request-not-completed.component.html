@@ -1,0 +1,21 @@
+<div class="container">
+  <app-logo></app-logo>
+
+  <div class="row rowWidth100">
+    <div class="col-md-12 colHeight">
+      <form [formGroup]="messageForm">           
+        
+        <div class="message-content" >
+          <h2>Γράψτε στο παρακάτω πλαίσιο</h2>            
+          <mat-form-field>        
+            <textarea matInput placeholder="...." formControlName="message"></textarea>
+          </mat-form-field>
+        </div>  
+        <!-- add back button -->
+        <div class="to-right">
+          <button  mat-raised-button [disabled]="!isMessageNotEmpty" (click)="submit()">Υποβολή</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

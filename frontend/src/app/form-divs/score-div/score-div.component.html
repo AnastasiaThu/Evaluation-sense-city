@@ -1,0 +1,21 @@
+  <div class="step-content" >
+    <h2>{{ question }}</h2>
+    <div class="flex-container">
+      <h4 class="side-text">Καθόλου</h4>
+      <div class="form-check form-check-inline" *ngFor="let option of scoreOptions">
+        <div class="radio-wrapper">
+          <input
+            class="form-check-input"
+            type="radio"
+            [id]="'option' + option"
+            [value]="option"
+            [(ngModel)]="selectedScore"
+            (change)="enableNextButton(option)"
+          />
+          <label class="form-check-label" [for]="'option' + option">{{ option }}</label>
+        </div>
+      </div>
+      <h4 class="side-text">Πάρα πολύ</h4>
+    </div>
+  </div>
+

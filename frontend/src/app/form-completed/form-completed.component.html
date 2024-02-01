@@ -1,0 +1,15 @@
+<div class="container">
+  <app-logo></app-logo>  
+  
+    <div class="content-container mt-4">
+      <!-- needs if success/error message -->
+      <!-- <div class="alert alert-success">        
+        <strong>Η αξιολόγηση καταχωρήθηκε με επιτυχία</strong>
+      </div> -->
+      <div class="message ">Ευχαριστούμε για το χρόνο σας!</div>
+      <div *ngIf="averageValue">
+        <p>Το σκορ που υποβάλλατε είναι: {{ averageValue }}</p>
+      </div>
+      
+    </div>
+</div>

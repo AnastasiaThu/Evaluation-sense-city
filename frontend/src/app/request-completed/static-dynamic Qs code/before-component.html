@@ -1,0 +1,213 @@
+<!-- 
+<div class="container">
+
+    <app-logo></app-logo>
+  
+    <div class="row rowWidth100">
+      <div class="col-md-12 colHeight">
+  
+        <div id="stepper" class="row bs-stepper">
+          <div class="col-md-12">
+            <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>
+  
+            <form [formGroup]="myForm">
+            <div *ngIf="stepperDiv===1">    
+              <div class="step-content" data-target="#step1">
+                <h2>Πόσο ικανοποιημένος είστε από την εξυπηρέτηση του τμήματος;</h2>
+                  
+                  <div class="flex-container">                 
+                      <h4 class="side-text">Καθόλου</h4>
+                      <div class="form-check form-check-inline" *ngFor="let option of scoreOptions">
+                        <div class="radio-wrapper">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="step1"
+                            [id]="'option' + option"
+                            [value]="option"
+                            (change)="enableNextButton(option)"
+                            formControlName="step1"
+                          />
+                          <label class="form-check-label" [for]="'option' + option">{{ option }}</label>
+                        </div>
+                      </div>
+                      <h4 class="side-text">Πάρα πολύ</h4>   
+                  </div>
+  
+              </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===2">
+            <div class="step-content" data-target="#step2"> 
+                <h2>Πόσο ευχαριστημένος είστε από τον χρόνο αποκατάστασης;</h2>
+                <div class="flex-container">  
+                  <h4 class="side-text">Καθόλου</h4>
+                    <div class="form-check form-check-inline" *ngFor="let option of scoreOptions">
+                      <div class="radio-wrapper">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="step2"
+                          [id]="'option' + option"
+                          [value]="option"
+                          (change)="enableNextButton(option)"
+                          formControlName="step2"
+                        />
+                        <label class="form-check-label" [for]="'option' + option">{{ option }}</label>
+                      </div>
+                    </div>
+                    <h4 class="side-text">Πάρα πολύ</h4>
+                </div>
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===3">
+            <div class="step-content" data-target="#step3">
+                <h2>Πόσο εύκολο ήταν να επικοινωνήσετε με τον Δήμο;</h2>
+                <div class="flex-container">  
+                  <h4 class="side-text">Καθόλου</h4>
+                    <div class="form-check form-check-inline" *ngFor="let option of scoreOptions">
+                      <div class="radio-wrapper">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="step3"
+                          [id]="'option' + option"
+                          [value]="option"
+                          (change)="enableNextButton(option)"
+                          formControlName="step3"
+                        />
+                        <label class="form-check-label" [for]="'option' + option">{{ option }}</label>
+                      </div>
+                    </div>
+                    <h4 class="side-text">Πάρα πολύ</h4>
+                </div>
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===4">
+            <div class="step-content" data-target="#step4">
+                <h2>Πώς μάθατε για την υπηρεσία;</h2>
+                <div class="flex-container">  
+                    <div class="form-check form-check-inline" *ngFor="let option of radioOptions">
+                      <div class="radio-wrapper">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="step4"
+                          [id]="option"
+                          [value]="option"
+                          (change)="enableNextButton(option)"
+                          formControlName="step4"
+                        />
+                        <label class="form-check-label" [for]="option">{{ option }}</label>
+                      </div>
+                    </div>
+                  </div>
+                    <div *ngIf="myForm.get('step4')?.value === 'Άλλο'">
+                      <input
+                        type="text"
+                        id="otherInput"
+                        placeholder="..."
+                        formControlName="otherTxt"
+                      />
+                    </div>
+  
+                
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===5">
+            <div class="step-content" data-target="#step5">  
+                <div class="flex-container">  
+                  <h2> Οι ερωτήσεις που ακολουθούν είναι προαιρετικές με σκοπό τη συλλογή στατιστικών δεδομένων. Θα μας βοηθούσε αν αφιερώνατε λίγο χρόνο για την συμπλήρωσή τους. Διαφορετικά μπορείτε να μεταβείτε στο τέλος της φόρμας επιλέγοντας παράλειψη. </h2>
+                </div>
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===6">
+            <div class="step-content" data-target="#step6">
+                <h2>Επιλέξτε το φύλο σας</h2>
+                <div class="flex-container">  
+                    <div class="form-check form-check-inline" *ngFor="let option of ['Γυναίκα','Άντρας','Άλλο']">
+                      <div class="radio-wrapper">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="step6"
+                          [id]="option"
+                          [value]="option"
+                          (change)="enableNextButton(option)"
+                          formControlName="step6"
+                        />
+                        <label class="form-check-label" [for]="option">{{ option }}</label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===7" >
+            <div class="step-content" data-target="#step7"> 
+                <h2>Δώστε το έτος γέννησής σας</h2>
+                  <app-year-picker (yearSelected)="chosenYearHandler($event)"></app-year-picker>            
+            </div>
+          </div>
+  
+          
+  
+          <div *ngIf="stepperDiv===8">          
+            <div class="step-content" data-target="#step8">
+              <h2>Επιλέξτε το εκπαιδευτικό σας επίπεδο</h2>
+                <div class="flex-container">  
+                    <div class="form-check form-check-inline" *ngFor="let option of educationOptions">
+                      <div class="radio-wrapper">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="step8"
+                          [id]="option"
+                          [value]="option"
+                          (change)="enableNextButton(option)"
+                          formControlName="step8"
+                        />
+                        <label class="form-check-label" [for]="option">{{ option }}</label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+  
+          <div *ngIf="stepperDiv===9">
+            <div class="step-content" data-target="#step9">  
+                <div class="flex-container">  
+                  <h2>Είστε σίγουρος ότι θέλετε να προχωρήσετε σε υποβολή των απαντήσεων;</h2>
+                </div>
+            </div>
+          </div>
+        </form>
+  
+          <div [ngClass]="{'step-buttons': true, 'justify-content-between': stepperDiv !== 1, 'no-previous': stepperDiv === 1}">
+            <div *ngIf="stepperDiv !== 1">
+              <button mat-raised-button type="button" (click)="goToPrevious()">Προηγούμενο</button>
+            </div>
+          
+            <div class="right-buttons">
+              <div *ngIf="stepperDiv !== 9">
+                <button mat-raised-button type="button" (click)="goToNext()" [disabled]="!isNextButtonEnabled && notOptional()">Επόμενο</button>
+              </div>
+              <div *ngIf="stepperDiv === 5">
+                <button mat-raised-button type="button" (click)="goToEnd()">Παράλειψη</button>
+              </div>
+              <div *ngIf="stepperDiv === 9">
+                <button mat-raised-button type="button" (click)="getValues()">Υποβολή</button>
+              </div>
+            </div>
+          </div>       
+  
+  
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div> -->
